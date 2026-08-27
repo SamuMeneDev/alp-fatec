@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="salario_inss"/>
+        <attribute name="authors" value="Aluno"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-08-20 12:25:08 "/>
+        <attribute name="created" value="QWx1bm87MjU3X0RTMi0zMTE7MjAyNi0wOC0xOTsiMDQ6MjA6MDYgIjsyMzU0"/>
+        <attribute name="edited" value="QWx1bm87MjU3X0RTMi0zMTE7MjAyNi0wOC0xOTsiMDU6NTQ6MzcgIjsxOzI0NzQ="/>
+        <attribute name="edited" value="U2FtdSBNZW5lO0RFU0tUT1AtVlJOMEJWTzsyMDI2LTA4LTIwOyIxMjoyNTowOCAiOzE7MzIzNg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="salario" type="Real" array="False" size=""/>
+            <declare name="salarioLiquido" type="Real" array="False" size=""/>
+            <declare name="irpf" type="Real" array="False" size=""/>
+            <declare name="inss" type="Real" array="False" size=""/>
+            <output expression="&quot;Digite o sal&#225;rio bruto&quot;" newline="True"/>
+            <input variable="salario"/>
+            <if expression="salario &lt; 1503.98">
+                <then>
+                    <assign variable="irpf" expression="0"/>
+                </then>
+                <else>
+                    <if expression="salario &lt; 2826.65">
+                        <then>
+                            <assign variable="irpf" expression="(salario * 0.075) - 142.80"/>
+                        </then>
+                        <else>
+                            <if expression="salario &lt; 3751.05">
+                                <then>
+                                    <assign variable="irpf" expression="(salario  * 0.15) - 354.80"/>
+                                </then>
+                                <else>
+                                    <if expression="salario &lt; 4664.60">
+                                        <then>
+                                            <assign variable="irpf" expression="(salario  * 0.225) - 636.13"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="irpf" expression="(salario  * 0.275) - 865.36"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Salario - IRPF: &quot; &amp;(salario-irpf)" newline="True"/>
+            <if expression="salario &lt; 1621.00">
+                <then>
+                    <assign variable="inss" expression="(salario  * 0.075)"/>
+                </then>
+                <else>
+                    <if expression="salario &lt; 2902.84">
+                        <then>
+                            <assign variable="inss" expression="(salario * 0.09) - 24.34"/>
+                        </then>
+                        <else>
+                            <if expression="salario &lt; 4354.27">
+                                <then>
+                                    <assign variable="inss" expression="(salario  * 0.12) - 111.41"/>
+                                </then>
+                                <else>
+                                    <if expression="salario &lt; 8475.55">
+                                        <then>
+                                            <assign variable="inss" expression="(salario * 0.14) - 198.50"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="inss" expression="988.07"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Salario - INSS: &quot; &amp;(salario - inss)" newline="True"/>
+            <assign variable="salarioLiquido" expression="salario - (inss +irpf)"/>
+            <output expression="&quot;Salario liquido: &quot; &amp;salarioLiquido" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

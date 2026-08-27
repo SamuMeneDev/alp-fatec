@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="salario_inss"/>
+        <attribute name="authors" value="Aluno"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-08-20 12:59:01 "/>
+        <attribute name="created" value="QWx1bm87MjU3X0RTMi0zMTE7MjAyNi0wOC0xOTsiMDQ6MjA6MDYgIjsyMzU0"/>
+        <attribute name="edited" value="QWx1bm87MjU3X0RTMi0zMTE7MjAyNi0wOC0xOTsiMDU6NTQ6MzcgIjsxOzI0NzQ="/>
+        <attribute name="edited" value="U2FtdSBNZW5lO0RFU0tUT1AtVlJOMEJWTzsyMDI2LTA4LTIwOyIxMjo1OTowMSAiOzU7MzI0MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="salarioBruto" type="Real" array="False" size=""/>
+            <declare name="salarioLiquido" type="Real" array="False" size=""/>
+            <declare name="inss" type="Real" array="False" size=""/>
+            <declare name="irrf" type="Real" array="False" size=""/>
+            <output expression="&quot;Digite o sal&#225;rio bruto&quot;" newline="True"/>
+            <input variable="salarioBruto"/>
+            <if expression="salarioBruto &lt; 1621">
+                <then>
+                    <assign variable="inss" expression="salarioBruto * 0.075"/>
+                </then>
+                <else>
+                    <if expression="salarioBruto &lt; 2902.84">
+                        <then>
+                            <assign variable="inss" expression="salarioBruto * 0.09 - 24.34"/>
+                        </then>
+                        <else>
+                            <if expression="salarioBruto &lt; 4354.27">
+                                <then>
+                                    <assign variable="inss" expression="salarioBruto * 0.12 - 111.41"/>
+                                </then>
+                                <else>
+                                    <if expression="salarioBruto &lt; 8475.55">
+                                        <then>
+                                            <assign variable="inss" expression="salarioBruto * 0.14 - 198.50"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="inss" expression="salarioBruto - 988.07"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="salarioLiquido" expression="salarioBruto - inss"/>
+            <output expression="&quot;Salario Liquido: R$&quot; &amp;salarioLiquido" newline="True"/>
+            <if expression="salarioBruto &lt; 2428.80">
+                <then>
+                    <assign variable="irrf" expression="0"/>
+                </then>
+                <else>
+                    <if expression="salarioBruto &lt; 2826.65">
+                        <then>
+                            <assign variable="irrf" expression="salarioLiquido * 0.075 - 182.16"/>
+                        </then>
+                        <else>
+                            <if expression="salarioBruto &lt; 3751.05">
+                                <then/>
+                                <else>
+                                    <if expression="salarioBruto &lt; 4664.68">
+                                        <then/>
+                                        <else>
+                                            <assign variable="irrf" expression="salarioLiquido * 0.275 - 908.73"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;IRRF: R$&quot; &amp;(irrf)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
