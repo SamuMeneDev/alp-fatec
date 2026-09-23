@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="quadrado_tres_num"/>
+        <attribute name="authors" value="Samu Mene"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-23 07:06:07 "/>
+        <attribute name="created" value="U2FtdSBNZW5lO0RFU0tUT1AtVlJOMEJWTzsyMDI2LTA5LTIzOyIwNjo1ODowOCAiOzMxNDE="/>
+        <attribute name="edited" value="U2FtdSBNZW5lO0RFU0tUT1AtVlJOMEJWTzsyMDI2LTA5LTIzOyIwNzowNjowNyAiOzE7MzI0Mg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="varNum1, varNum2, varNum3" type="Integer" array="False" size=""/>
+            <output expression="&quot;Digite o primiero n&#250;mero: &quot;" newline="True"/>
+            <input variable="varNum1"/>
+            <output expression="&quot;Digite o segundo n&#250;mero: &quot;" newline="True"/>
+            <input variable="varNum2"/>
+            <output expression="&quot;Digite o terceiro n&#250;mero: &quot;" newline="True"/>
+            <input variable="varNum3"/>
+            <if expression="(varNum2 * varNum2) &gt;= 1000">
+                <then>
+                    <output expression="&quot;O quadrado do segundo n&#250;mero (&quot;&amp;varNum2&amp;&quot;) &#233; igual &#224;: &quot;&amp;(varNum2*varNum2)" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;O quadrado do primeiro n&#250;mero (&quot;&amp;varNum1&amp;&quot;) &#233; igual &#224;: &quot;&amp;(varNum1*varNum1)" newline="True"/>
+                    <output expression="&quot;O quadrado do segundo n&#250;mero (&quot;&amp;varNum2&amp;&quot;) &#233; igual &#224;: &quot;&amp;(varNum2*varNum2)" newline="True"/>
+                    <output expression="&quot;O quadrado do terceiro n&#250;mero (&quot;&amp;varNum3&amp;&quot;) &#233; igual &#224;: &quot;&amp;(varNum3*varNum3)" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

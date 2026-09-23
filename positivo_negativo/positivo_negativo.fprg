@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="positivo_negativo"/>
+        <attribute name="authors" value="Samu Mene"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-23 06:54:13 "/>
+        <attribute name="created" value="U2FtdSBNZW5lO0RFU0tUT1AtVlJOMEJWTzsyMDI2LTA5LTIzOyIwNjo0ODo0MCAiOzMxMzY="/>
+        <attribute name="edited" value="U2FtdSBNZW5lO0RFU0tUT1AtVlJOMEJWTzsyMDI2LTA5LTIzOyIwNjo1NDoxMyAiOzE7MzI0MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="varNum" type="Integer" array="False" size=""/>
+            <output expression="&quot;Digite um n&#250;mero: &quot;" newline="True"/>
+            <input variable="varNum"/>
+            <if expression="varNum &gt;= 0">
+                <then>
+                    <output expression="&quot;O n&#250;mero &quot;&amp;varNum&amp;&quot; &#233; POSITIVO&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;O n&#250;mero &quot;&amp;varNum&amp;&quot; &#233; NEGATIVO&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

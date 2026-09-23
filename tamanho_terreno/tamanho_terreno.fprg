@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="tamanho_terreno"/>
+        <attribute name="authors" value="Samu Mene"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-23 07:34:07 "/>
+        <attribute name="created" value="U2FtdSBNZW5lO0RFU0tUT1AtVlJOMEJWTzsyMDI2LTA5LTIzOyIwNzoyNzo1NyAiOzMxNDI="/>
+        <attribute name="edited" value="U2FtdSBNZW5lO0RFU0tUT1AtVlJOMEJWTzsyMDI2LTA5LTIzOyIwNzozNDowNyAiOzE7MzI0Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="varLargura, varComprimento, varArea" type="Real" array="False" size=""/>
+            <output expression="&quot;Digite a largura do terreno em metros (m): &quot;" newline="True"/>
+            <input variable="varLargura"/>
+            <output expression="&quot;Digite o comprimento do terreno em metros (m): &quot;" newline="True"/>
+            <input variable="varComprimento"/>
+            <assign variable="varArea" expression="varComprimento * varLargura"/>
+            <output expression="&quot;Area do terreno: &quot;&amp;varArea&amp;&quot;m | &quot;" newline="False"/>
+            <if expression="varArea &lt; 100">
+                <then>
+                    <output expression="&quot;Terreno pequeno&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="varArea &lt;= 600">
+                        <then>
+                            <output expression="&quot;Terreno M&#233;dio&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Terreno Grande&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
