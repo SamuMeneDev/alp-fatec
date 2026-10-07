@@ -11,7 +11,7 @@ int main() {
     
     media = (n1 + n2) / 2;
     
-    printf("A média é igual a: %.2f", media);
+    printf("A média é igual a: %.2f\n", media);
     
     return 0;   
 }
